@@ -1,14 +1,24 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Greetings</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @greetings.each do |greeting| %>
+        <tr>
+          <td><%= greeting.name %></td>
+          <td><%= greeting.message %></td>
+          <td></td>
+        </tr>
+      </p>
+    <% end %>
+  </tbody>
 
-<div id="greetings">
-  <% @greetings.each do |greeting| %>
-    <%= render greeting %>
-    <p>
-      <%= link_to "Show this greeting", greeting %>
-    </p>
-  <% end %>
-</div>
-
+</table>
 <%= link_to "New greeting", new_greeting_path %>
